@@ -68,7 +68,7 @@ int main()
 		printf("Resultado de la RESTA es: %.2f\n",resta(A,B));
 		printf("Resultado de la MULTIPLICACION es: %.2f\n",multiplicacion(A,B));
 		printf("Resultado de la DIVICION es: %.2f\n",division(A,B));
-		printf("El FACTORIAL de A es %2.f",factorial(A));
+		printf("El FACTORIAL de A es %2.f\n",factorial(A));
                 break;
             case 9:
                 system("cls");
