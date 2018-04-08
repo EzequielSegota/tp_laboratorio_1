@@ -27,37 +27,51 @@ int main()
         switch(opcion)
         {
             case 1:
+                system("cls");
                 printf("\n\nIngrese numero:");
                 scanf("%f",&A);
                 break;
             case 2:
+                system("cls");
                 printf("\n\nIngrese numero:");
                 scanf("%f",&B);
                 break;
             case 3:
+                system("cls");
                 resultado=suma(A,B);
                 printf("\n\nEl resultado es: %.2f \n\n",resultado);
                 break;
             case 4:
+                system("cls");
                 resultado=resta(A,B);
                 printf("\n\nEl resultado es: %.2f \n\n",resultado);
                 break;
             case 5:
+                system("cls");
                 resultado=division(A,B);
                 printf("\n\nEl resultado es: %.2f \n\n",resultado);
                 break;
             case 6:
+                system("cls");
                 resultado=multiplicacion(A,B);
                 printf("\n\nEl resultado es: %.2f \n\n",resultado);
                 break;
             case 7:
+                system("cls");
                 resultado=factorial(A);
                 printf("\n\nEl resultado es: %.2f \n\n",resultado);
                 break;
             case 8:
-
+                system("cls");
+                printf("A=%.2f\nB=%.2f\n",A,B);
+                printf("Resultado de la SUMA es: %.2f\n",suma(A,B));
+				printf("Resultado de la RESTA es: %.2f\n",resta(A,B));
+				printf("Resultado de la MULTIPLICACION es: %.2f\n",multiplicacion(A,B));
+				printf("Resultado de la DIVICION es: %.2f\n",divicion(A,B));
+				printf("El FACTORIAL de A es %2.f",factorial(A));
                 break;
             case 9:
+                system("cls");
                 seguir = 'n';
                 break;
         }
