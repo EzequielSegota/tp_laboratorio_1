@@ -65,10 +65,10 @@ int main()
                 system("cls");
                 printf("A=%.2f\nB=%.2f\n",A,B);
                 printf("Resultado de la SUMA es: %.2f\n",suma(A,B));
-				printf("Resultado de la RESTA es: %.2f\n",resta(A,B));
-				printf("Resultado de la MULTIPLICACION es: %.2f\n",multiplicacion(A,B));
-				printf("Resultado de la DIVICION es: %.2f\n",divicion(A,B));
-				printf("El FACTORIAL de A es %2.f",factorial(A));
+		printf("Resultado de la RESTA es: %.2f\n",resta(A,B));
+		printf("Resultado de la MULTIPLICACION es: %.2f\n",multiplicacion(A,B));
+		printf("Resultado de la DIVICION es: %.2f\n",division(A,B));
+		printf("El FACTORIAL de A es %2.f",factorial(A));
                 break;
             case 9:
                 system("cls");
