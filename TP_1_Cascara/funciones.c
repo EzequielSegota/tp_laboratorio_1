@@ -99,7 +99,7 @@ void todasLasOperaciones(float A,float B)
                 }
                 if(Y>0 || A<0)
                 {
-                    printf("\n\nError, no se puede factorear un numero decimal o negativo");
+                    printf("\n\nError, no se puede factorear un numero decimal o negativo\n");
                 }
                 else
                 {
