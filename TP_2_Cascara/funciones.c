@@ -50,8 +50,10 @@ void altaPersona(EPersona lista[],int largo)
 
         printf("\nIngrese DNI: ");
         scanf("%d",&lista[vacio].dni);
-
-
+    }
+    else
+    {
+	printf("\nError, no hay espacio disponible");
     }
 }
 
