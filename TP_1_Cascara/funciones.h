@@ -49,12 +49,13 @@ float multiplicacion(float A, float B);
  *
  */
 float factorial(float A);
-
+/*
 /** \brief Toma los valores de A y B, realiza todas las operaciones, las muestra en un printf
  *
  * \param A int
  * \param B int
  * \return void
  *
- */
+ **
 void todasLasOperaciones(float A,float B);
+*/

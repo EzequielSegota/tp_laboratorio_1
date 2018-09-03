@@ -75,7 +75,7 @@ float factorial(float A)
     return f;
 }
 
-void todasLasOperaciones(float A,float B)
+/*void todasLasOperaciones(float A,float B)
 {
                 int X;
                 float Y;
@@ -108,3 +108,4 @@ void todasLasOperaciones(float A,float B)
 
 
 }
+*/
