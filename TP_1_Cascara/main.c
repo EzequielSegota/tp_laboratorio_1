@@ -11,7 +11,6 @@ int main()
     float resultado;
     float resultadoA;
     float resultadoB;
-
     while(seguir=='s')
     {
         printf("1- Ingresar 1er operando (A=%.2f)\n",A);
@@ -60,8 +59,9 @@ int main()
             case 7:
                 system("cls");
                 resultadoA=factorial(A);
-                resultadoB=factorial(B);
+
                 printf("\n\nEl resultado de A! es: %.2f \n\n",resultadoA);
+                resultadoB=factorial(B);
                 printf("\n\nEl resultado de B! es: %.2f \n\n",resultadoB);
                 break;
             case 8:

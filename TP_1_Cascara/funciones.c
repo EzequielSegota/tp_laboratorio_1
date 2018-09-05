@@ -58,10 +58,15 @@ float factorial(float A)
 
     Y=Y-X;
 
-    while(Y>0 || A<0)
+    while(Y>0 && Y<1 || A<0)
     {
         printf("\n\nError, no se puede factorear un numero decimal o negativo, ingrese nuevo numero:");
         scanf("%f",&A);
+
+        X=A;
+        Y=A;
+
+        Y=Y-X;
     }
     if(A==0)
     {
