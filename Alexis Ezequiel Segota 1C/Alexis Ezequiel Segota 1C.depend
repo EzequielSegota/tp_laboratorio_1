@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1557237785 source:d:\parcial\alexis ezequiel segota 1c\header.c
+	"header.h"
+
+1557237461 d:\parcial\alexis ezequiel segota 1c\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1557236752 source:d:\parcial\alexis ezequiel segota 1c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"header.h"
+
