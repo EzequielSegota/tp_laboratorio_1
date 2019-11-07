@@ -98,6 +98,16 @@ int employee_getNombre(Employee* this,char* nombre){
     return retorno;
 }
 
+int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
+{
+    int retorno = 0;
+    if(this != NULL && horasTrabajadas != NULL){
+        *horasTrabajadas=this->horasTrabajadas;
+        retorno = 1;
+    }
+    return retorno;
+}
+
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
 {
     int retorno=0;
@@ -120,3 +130,13 @@ int employee_setSueldo(Employee* this,float sueldo)
     return retorno;
 }
 
+
+int employee_getSueldo(Employee* this,float* sueldo)
+{
+    int retorno = 0;
+    if(this != NULL && sueldo != NULL){
+        *sueldo=this->sueldo;
+        retorno = 1;
+    }
+    return retorno;
+}

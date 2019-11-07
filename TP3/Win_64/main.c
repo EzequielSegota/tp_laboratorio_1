@@ -59,6 +59,15 @@ int main()
             }
             system("pause");
             break;
+        case 3:
+            if(controllerFromText == 1 || controllerFromBinary == 1){
+                controller_addEmployee(listaEmpleados);
+            }
+            else{
+                printf("\n No se cargaron empleados.\n\n");
+            }
+            system("pause");
+            break;
         case 4:
             if(controllerFromText == 1 || controllerFromBinary == 1){
                 controller_editEmployee(listaEmpleados);
@@ -87,6 +96,8 @@ int main()
             system("pause");
             break;
         case 7:
+            controller_sortEmployee(listaEmpleados);
+            system("pause");
             break;
         case 8:
             if(controllerFromText == 1 || controllerFromBinary == 1){
@@ -96,6 +107,8 @@ int main()
                 printf("\n No se cargaron empleados.\n\n");
             }
             system("pause");
+            break;
+        case 9:
             break;
         case 10:
             seguir = 'n';

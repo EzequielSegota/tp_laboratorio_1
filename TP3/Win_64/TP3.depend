@@ -278,3 +278,54 @@
 	<string.h>
 	<ctype.h>
 
+1572534129 source:c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1572533456 c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\parser.h
+	"LinkedList.h"
+
+1572533456 c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\linkedlist.h
+
+1572525184 c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\controller.h
+
+1572533456 c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\employee.h
+
+1572533456 c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\utn.h
+
+1572533727 source:c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"parser.h"
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1572530435 source:c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1572533456 source:c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"parser.h"
+
+1572533456 source:c:\users\alumno\desktop\tp_laboratorio_1-master\tp3\win_64\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+

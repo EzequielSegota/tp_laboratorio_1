@@ -13,14 +13,14 @@ int menu()
     int opcion;
     printf("   Opciones:\n\n");
     printf("1. Cargar los datos de los empleados desde el archivo data.csv (modo texto).\n");
-    printf("2. Cargar los datos de los empleados desde el archivo data.csv (modo binario).\n");
+    printf("2. Cargar los datos de los empleados desde el archivo data.bin (modo binario).\n");
     printf("3. Alta de empleado\n");
     printf("4. Modificar datos de empleado\n");
     printf("5. Baja de empleado\n");
     printf("6. Listar empleados\n");
     printf("7. Ordenar empleados\n");
     printf("8. Guardar los datos de los empleados en el archivo data.csv (modo texto).\n");
-    printf("9. Guardar los datos de los empleados en el archivo data.csv (modo binario).\n");
+    printf("9. Guardar los datos de los empleados en el archivo data.bin (modo binario).\n");
     printf("10. Salir\n\n");
     opcion = getValidInt("Ingrese opcion: ", "Error de ingreso, reintente.\n");
     return opcion;
@@ -71,6 +71,12 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     int opcion;
 
     char auxNombre[51];
+    int auxHorasT;
+    int* auxHorasActuales;
+    auxHorasActuales=malloc(sizeof(int*));
+    float auxSueldo;
+    float* sueldoActual;
+    sueldoActual=malloc(sizeof(float*));
     char name[51];
     Employee* this;
     system("cls");
@@ -91,31 +97,64 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
         printf("\n Menu de opciones\n\n1- Modificar nombre\n2- Modificar horas trabajadas\n3- Modificar sueldo\n4- Salir\n\n");
         opcion = getValidIntRango("Ingrese opcion: ", "Error de ingreso. Reintente.", 1, 4);
     }
-
-    switch(opcion)
+    do
     {
-    case 1:
-        printf("\nModificar nombre\n\n");
-        getValidStringRango("Ingrese nuevo nombre: ", "Error, solo se admiten letras.\n", auxNombre, 51);
-        employee_getNombre(this, name);
-        printf("\nSe modificara \"%s\" por \"%s\"\n\n", auxNombre, name);
-        fflush(stdin);
-        confirmacion = getValidChar("Confirma la modificacion (s/n)?: ", "\nError de ingreso. Reintente.\n", 's', 'n');
-        if(confirmacion == 's'){
-            employee_setNombre(this, auxNombre);
-            printf("Se modifico el nombre con exito.\n\n");
+        switch(opcion)
+        {
+        case 1:
+            printf("\nModificar nombre\n\n");
+            getValidStringRango("Ingrese nuevo nombre: ", "Error, solo se admiten letras.\n", auxNombre, 51);
+            employee_getNombre(this, name);
+            printf("\nSe modificara \"%s\" por \"%s\"\n\n", auxNombre, name);
+            fflush(stdin);
+            confirmacion = getValidChar("Confirma la modificacion (s/n)?: ", "\nError de ingreso. Reintente.\n", 's', 'n');
+            if(confirmacion == 's'){
+                employee_setNombre(this, auxNombre);
+                printf("Se modifico el nombre con exito.\n\n");
+            }
+            else{
+                printf("Se cancelo la modificacion del nombre.\n\n");
+            }
+            break;
+        case 2:
+            printf("\nModificar Horas trabajadas\n\n");
+            auxHorasT=getValidInt("Ingrese cantidad de horas:","Error de ingreso, reintente.\n");
+            employee_getHorasTrabajadas(this,auxHorasActuales);
+            printf("\nSe modificara \"%d\" por \"%d\"\n\n",*auxHorasActuales, auxHorasT);
+            fflush(stdin);
+            confirmacion = getValidChar("Confirma la modificacion (s/n)?: ", "\nError de ingreso. Reintente.\n", 's', 'n');
+            if(confirmacion == 's'){
+                employee_setHorasTrabajadas(this, auxHorasT);
+                printf("Se modifico las horas con exito.\n\n");
+            }
+            else{
+                printf("Se cancelo la modificacion de las horas trabajadas.\n\n");
+            }
+            break;
+        case 3:
+            printf("\nModificar Sueldo\n\n");
+            auxSueldo=getValidFloat("Ingrese nuevo sueldo:","Error de ingreso, reintente.\n");
+            employee_getSueldo(this,sueldoActual);
+            printf("\nSe modificara \"%f\" por \"%f\"\n\n",*sueldoActual, auxSueldo);
+            fflush(stdin);
+            confirmacion = getValidChar("Confirma la modificacion (s/n)?: ", "\nError de ingreso. Reintente.\n", 's', 'n');
+            if(confirmacion == 's'){
+                employee_setSueldo(this, auxSueldo);
+                printf("Se modifico el sueldo con exito.\n\n");
+            }
+            else{
+                printf("Se cancelo la modificacion del sueldo.\n\n");
+            }
+            break;
+        case 4:
+            system("cls");
+            printf("\nAdios!");
+            break;
+        default:
+            printf("\nError de ingreso.\n\n");
         }
-        else{
-            printf("Se cancelo la modificacion del nombre.\n\n");
-        }
-        break;
+    }while(opcion!=4);
 
-
-    case 4:
-        break;
-    default:
-        printf("\nError de ingreso.\n\n");
-    }
     return retorno;
 }
 
@@ -169,6 +208,10 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
         this = ll_get(pArrayListEmployee,i);
         printf(" %4d | %12s |          %4d  | $ %.2f\n",this->id,this->nombre,this->horasTrabajadas,this->sueldo); //Imprimo this
         retorno = 1;
+        if(i%100==0 && i!=0)
+        {
+            system("pause");
+        }
     }
     printf("\n");
     return retorno;
@@ -176,7 +219,43 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+    int retorno = 0;
+    Employee* this;
+    this=malloc(sizeof(Employee*));
+
+    Employee* thisAux;
+    thisAux=malloc(sizeof(Employee*));
+
+    Employee* thisAuxAux;
+    thisAuxAux=malloc(sizeof(Employee*));
+
+    float* sueldo;
+    sueldo=malloc(sizeof(float*));
+
+    float* sueldoAux;
+    sueldoAux=malloc(sizeof(float*));
+
+    system("cls");
+    printf(" ORDENAR EMPLEADOS \n\n");
+    for(int i=0; i<ll_len(pArrayListEmployee)-1; i++)
+    {
+        this = ll_get(pArrayListEmployee,i);
+        employee_getSueldo(this,sueldo);
+        for(int j=i+1; j<ll_len(pArrayListEmployee); j++)
+        {
+            thisAux = ll_get(pArrayListEmployee,j);
+            employee_getSueldo(thisAux,sueldoAux);
+            if(*sueldoAux>*sueldo)
+            {
+                thisAuxAux=this;
+                this=thisAux;
+                thisAux=thisAuxAux;
+            }
+        }
+    }
+    controller_ListEmployee(pArrayListEmployee);
+    retorno = 1;
+    return retorno;
 }
 
 
